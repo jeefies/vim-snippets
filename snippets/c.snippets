@@ -1,14 +1,12 @@
 ## Main
 # main
 snippet main
-	int main(int argc, char *argv[])
-	{
+	int main(int argc, char *argv[]) {
 		${0}
 	}
 # main(void)
 snippet mainn
-	int main(void)
-	{
+	int main(void) {
 		${0}
 	}
 ##
@@ -143,14 +141,12 @@ snippet do
 ## Functions
 # function definition
 snippet fun
-	${1:void} ${2:function_name}(${3})
-	{
+	${1:void} ${2:function_name}(${3}) {
 		${4}
 	}
 # function definition with zero parameters
 snippet fun0
-	${1:void} ${2:function_name}()
-	{
+	${1:void} ${2:function_name}() {
 		${3}
 	}
 # function definition with Doxygen documentation
@@ -161,14 +157,12 @@ snippet dfun0
 	 *
 	 * \return ${3:Return parameter description}
 	 */
-	${4:void} ${5:function_name}()
-	{
+	${4:void} ${5:function_name}() {
 		${6}
 	}
 # function definition with one parameter
 snippet fun1
-	${1:void} ${2:function_name}(${3:Type} ${4:Parameter})
-	{
+	${1:void} ${2:function_name}(${3:Type} ${4:Parameter}) {
 		${5}
 	}
 # function definition with one parameter with  Doxygen documentation
@@ -180,14 +174,12 @@ snippet dfun1
 	 * \param $3 ${4:Parameter description}
 	 * \return ${5:Return parameter description}
 	 */
-	${6:void} ${7:function_name}(${8:Type} ${3:Parameter})
-	{
+	${6:void} ${7:function_name}(${8:Type} ${3:Parameter}) {
 		${9}
 	}
 # function definition with two parameters
 snippet fun2
-	${1:void} ${2:function_name}(${3:Type} ${4:Parameter}, ${5:Type} ${6:Parameter})
-	{
+	${1:void} ${2:function_name}(${3:Type} ${4:Parameter}, ${5:Type} ${6:Parameter}) {
 		${7}
 	}
 # function definition with two parameters with  Doxygen documentation
@@ -200,14 +192,12 @@ snippet dfun2
 	 * \param $5 ${6:Parameter description}
 	 * \return ${7:Return parameter description}
 	 */
-	${8:void} ${9:function_name}(${10:Type} ${3:Parameter}, ${11:Type} ${5:Parameter})
-	{
+	${8:void} ${9:function_name}(${10:Type} ${3:Parameter}, ${11:Type} ${5:Parameter}) {
 		${12}
 	}
 # function definition with three parameters
 snippet fun3
-	${1:void} ${2:function_name}(${3:Type} ${4:Parameter}, ${5:Type} ${6:Parameter}, ${7:Type} ${8:Parameter})
-	{
+	${1:void} ${2:function_name}(${3:Type} ${4:Parameter}, ${5:Type} ${6:Parameter}, ${7:Type} ${8:Parameter}) {
 		${9}
 	}
 # function definition with three parameters with  Doxygen documentation
@@ -221,8 +211,7 @@ snippet dfun3
 	 * \param $7 ${8:Parameter description}
 	 * \return ${9:Return parameter description}
 	 */
-	${10:void} ${11:function_name}(${12:Type} ${3:Parameter}, ${13:Type} ${5:Parameter}, ${14:Type} ${7:Parameter})
-	{
+	${10:void} ${11:function_name}(${12:Type} ${3:Parameter}, ${13:Type} ${5:Parameter}, ${14:Type} ${7:Parameter}) {
 		${15}
 	}
 # function declaration
@@ -294,13 +283,12 @@ snippet errx
 # getopt
 snippet getopt
 	int choice;
-	while (1)
-	{
-		static struct option long_options[] =
-		{
+	while (1) {
+		static struct option long_options[] = {
 			/* Use flags like so:
-			{"verbose",	no_argument,	&verbose_flag, 'V'}*/
-			/* Argument styles: no_argument, required_argument, optional_argument */
+			 * {"verbose",	no_argument,	&verbose_flag, 'V'}
+			 * Argument styles: no_argument, required_argument, optional_argument
+			 */
 			{"version", no_argument,	0,	'v'},
 			{"help",	no_argument,	0,	'h'},
 			${1}
@@ -310,9 +298,10 @@ snippet getopt
 		int option_index = 0;
 
 		/* Argument parameters:
-			no_argument: " "
-			required_argument: ":"
-			optional_argument: "::" */
+		 * no_argument: " "
+		 * required_argument: ":"
+		 * optional_argument: "::" 
+		 */
 
 		choice = getopt_long( argc, argv, "vh",
 					long_options, &option_index);
@@ -341,10 +330,8 @@ snippet getopt
 	}
 
 	/* Deal with non-option arguments here */
-	if ( optind < argc )
-	{
-		while ( optind < argc )
-		{
+	if ( optind < argc ) {
+		while ( optind < argc ) {
 			${0}
 		}
 	}
