@@ -182,6 +182,10 @@ snippet cl
 		${0}	
 	}
 snippet str
+	struct ${1:Name} {
+		${0}
+	}
+snippet tstr
 	struct${1:(T)} ${2:`vim_snippets#Filename("$3", "untitled")`} {
 		${0}	
 	}
@@ -336,3 +340,12 @@ snippet idk
 	// I don't know how this works. Don't touch it.
 snippet idfk
 	// Don't FUCKING touch this.
+## Input Output methods
+snippet wl
+	writeln(${0});
+snippet wf
+	writef("${1}", ${0});
+snippet wfl
+	writefln("${1}", ${0});
+snippet rf
+	readf(" ${1:%d}", ${0})
