@@ -1,12 +1,5 @@
 extends c
 
-## Main
-# main()
-snippet mainn
-	int main() {
-		${0}
-		return 0;
-	}
 ##
 ## Preprocessor
 # #include <...>
@@ -23,7 +16,7 @@ snippet array
 snippet vector
 	std::vector<${1:T}> ${2};
 # std::deque
-snippet deque
+snippet deq
 	std::deque<${1:T}> ${2};
 # std::forward_list
 snippet flist
@@ -56,13 +49,13 @@ snippet umset
 snippet ummap
 	std::unordered_multimap<${1:Key}, ${2:T}> ${3};
 # std::stack
-snippet stack
+snippet stk
 	std::stack<${1:T}> ${2};
 # std::queue
-snippet queue
+snippet que
 	std::queue<${1:T}> ${2};
 # std::priority_queue
-snippet pqueue
+snippet pque
 	std::priority_queue<${1:T}> ${2};
 ##
 ## STL smart pointers
@@ -197,7 +190,7 @@ snippet fore
 	}
 # for from 1
 snippet for1
-	for (int ${1:i} = 1; $1 < ${2:n}; ${3:++}$1) {
+	for (int ${1:i} = 1; $1 <= ${2:n}; ${3:++}$1) {
 		${4}
 	}
 # iterator
@@ -244,3 +237,11 @@ snippet ctie
 snippet ustd
 	using namespace std;
 
+snippet lb
+	lower_bound
+
+snippet ub
+	upper_bound
+
+snippet tp
+	typedef ${1} $2;

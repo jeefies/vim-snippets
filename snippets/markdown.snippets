@@ -154,3 +154,14 @@ snippet : Definition list
 snippet :: Alternate definition list
 	$1
 	  - $0
+
+snippet frac
+	frac{$0}{$1}
+
+snippet sum
+	\\sum_{$1}^{$2} {${0:${VISUAL}}}
+
+snippet $$
+	\$\$
+	${0}
+	\$\$
