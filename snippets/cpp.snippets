@@ -7,6 +7,16 @@ snippet incc
 	#include <${1:iostream}>
 snippet binc
 	#include <boost/${1:shared_ptr}.hpp>
+snippet theusual
+	#include <iostream>
+	#include <algorithm>
+	#include <set>
+	#include <vector>
+	#include <map>
+	#include <cstring>
+	#include <string>
+	#include <queue>
+
 ##
 ## STL Collections
 # std::array
@@ -188,11 +198,6 @@ snippet fore
 	for (${1:auto} ${2:i} : ${3:container}) {
 		${4}
 	}
-# for from 1
-snippet for1
-	for (int ${1:i} = 1; $1 <= ${2:n}; ${3:++}$1) {
-		${4}
-	}
 # iterator
 snippet iter
 	for (${1:std::vector}<${2:type}>::${3:const_iterator} ${4:i} = ${5:container}.begin(); $4 != $5.end(); ++$4) {
@@ -229,7 +234,7 @@ snippet af auto function
 	};
 
 snippet con
-	const
+	const ${2:int} ${1:N} = ${0};
 
 snippet ctie
 	cin.tie(0)->sync_with_stdio(false);
@@ -238,10 +243,18 @@ snippet ustd
 	using namespace std;
 
 snippet lb
-	lower_bound
+	lower_bound(begin(${1}), end(${1}), ${0})
 
 snippet ub
-	upper_bound
+	upper_bound(begin(${1}), end(${1}), ${0})
 
-snippet tp
-	typedef ${1} $2;
+snippet twork
+	void work() {
+	}
+	int main() {
+		cin.tie(0)->sync_with_stdio(false);
+		int T; cin >> T;
+		while (T--) work();
+		return 0;
+	}
+
